@@ -66,6 +66,6 @@ window.Webflow.push(() => {
       false
     );
   }
-  const version = 'v0.0.1';
+  const version = 'v0.0.2';
   showVersion(version);
 });
