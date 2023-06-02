@@ -3,7 +3,7 @@ import { showVersion } from '$utils/greet';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar-main-wrap'); // Replace "navbar" with the ID of your navbar element
+    const navbar = document.getElementById('navbar-main-wrap');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const navbarDropdownMenu = document.querySelectorAll('.nav-dropdown-wrap');
 
@@ -66,6 +66,6 @@ window.Webflow.push(() => {
       false
     );
   }
-  const version = 'v0.0.2';
+  const version = 'v0.0.3';
   showVersion(version);
 });
