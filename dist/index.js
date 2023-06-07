@@ -15,16 +15,18 @@
       const navbar = document.getElementById("navbar-main-wrap");
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const navbarDropdownMenu = document.querySelectorAll(".nav-dropdown-wrap");
-      if (scrollTop > 0) {
-        navbar.style.height = "80px";
-        navbarDropdownMenu.forEach((menu) => {
-          menu.style.top = "115px";
-        });
-      } else {
-        navbar.style.height = "130px";
-        navbarDropdownMenu.forEach((menu) => {
-          menu.style.top = "165px";
-        });
+      if (window.innerWidth < 992) {
+        if (scrollTop > 0) {
+          navbar.style.height = "80px";
+          navbarDropdownMenu.forEach((menu) => {
+            menu.style.top = "115px";
+          });
+        } else {
+          navbar.style.height = "130px";
+          navbarDropdownMenu.forEach((menu) => {
+            menu.style.top = "165px";
+          });
+        }
       }
     });
     const servicesCards = document.querySelectorAll(".services-card");
@@ -63,7 +65,7 @@
         false
       );
     }
-    const version = "v0.0.2";
+    const version = "v0.0.3";
     showVersion(version);
   });
 })();

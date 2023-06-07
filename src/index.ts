@@ -6,17 +6,18 @@ window.Webflow.push(() => {
     const navbar = document.getElementById('navbar-main-wrap');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const navbarDropdownMenu = document.querySelectorAll('.nav-dropdown-wrap');
-
-    if (scrollTop > 0) {
-      navbar.style.height = '80px';
-      navbarDropdownMenu.forEach((menu) => {
-        menu.style.top = '115px'; // Adjust the top position to your desired value
-      });
-    } else {
-      navbar.style.height = '130px';
-      navbarDropdownMenu.forEach((menu) => {
-        menu.style.top = '165px'; // Adjust the top position to your desired value
-      });
+    if (window.innerWidth < 992) {
+      if (scrollTop > 0) {
+        navbar.style.height = '80px';
+        navbarDropdownMenu.forEach((menu) => {
+          menu.style.top = '115px'; // Adjust the top position to your desired value
+        });
+      } else {
+        navbar.style.height = '130px';
+        navbarDropdownMenu.forEach((menu) => {
+          menu.style.top = '165px'; // Adjust the top position to your desired value
+        });
+      }
     }
   });
   // Get All Videos
