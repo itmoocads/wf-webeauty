@@ -6,66 +6,67 @@ window.Webflow.push(() => {
     const navbar = document.getElementById('navbar-main-wrap');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const navbarDropdownMenu = document.querySelectorAll('.nav-dropdown-wrap');
-
-    if (scrollTop > 0) {
-      navbar.style.height = '80px';
-      navbarDropdownMenu.forEach((menu) => {
-        menu.style.top = '115px'; // Adjust the top position to your desired value
-      });
-    } else {
-      navbar.style.height = '130px';
-      navbarDropdownMenu.forEach((menu) => {
-        menu.style.top = '165px'; // Adjust the top position to your desired value
-      });
+    if (window.innerWidth > 992) {
+      if (scrollTop > 0) {
+        navbar.style.height = '80px';
+        navbarDropdownMenu.forEach((menu) => {
+          menu.style.top = '115px'; // Adjust the top position to your desired value
+        });
+      } else {
+        navbar.style.height = '130px';
+        navbarDropdownMenu.forEach((menu) => {
+          menu.style.top = '165px'; // Adjust the top position to your desired value
+        });
+      }
     }
   });
   // Get All Videos
-  const servicesCards = document.querySelectorAll('.services-card');
+  // const servicesCards = document.querySelectorAll('.services-card');
 
   //Loop over videos to add eventListeners
-  for (const card of servicesCards) {
-    const video = card.querySelector('.service-video-bg video');
-    //Play on Mouseover
-    card.addEventListener(
-      'mouseover',
-      function () {
-        video.play();
-      },
-      false
-    );
+  // for (const card of servicesCards) {
+  //   const video = card.querySelector('.service-video-bg video');
+  //   //Play on Mouseover
+  //   card.addEventListener(
+  //     'mouseover',
+  //     function () {
+  //       video.play();
+  //     },
+  //     false
+  //   );
 
-    card.addEventListener(
-      'mouseout',
-      function () {
-        video.pause();
-      },
-      false
-    );
-  }
+  //   card.addEventListener(
+  //     'mouseout',
+  //     function () {
+  //       video.pause();
+  //     },
+  //     false
+  //   );
+  // }
 
   // Get All Videos
-  const otherServiceCards = document.querySelectorAll('.other-services-card');
+  // const otherServiceCards = document.querySelectorAll('.other-services-card');
 
   //Loop over videos to add eventListeners
-  for (const otherServiceCard of otherServiceCards) {
-    const video = otherServiceCard.querySelector('.service-video-bg video');
-    //Play on Mouseover
-    otherServiceCard.addEventListener(
-      'mouseover',
-      function () {
-        video.play();
-      },
-      false
-    );
+  // for (const otherServiceCard of otherServiceCards) {
+  //   const video = otherServiceCard.querySelector('.service-video-bg video');
+  //   //Play on Mouseover
+  //   otherServiceCard.addEventListener(
+  //     'mouseover',
+  //     function () {
+  //       video.play();
+  //     },
+  //     false
+  //   );
 
-    otherServiceCard.addEventListener(
-      'mouseout',
-      function () {
-        video.pause();
-      },
-      false
-    );
-  }
-  const version = 'v0.0.3';
+  //   otherServiceCard.addEventListener(
+  //     'mouseout',
+  //     function () {
+  //       video.pause();
+  //     },
+  //     false
+  //   );
+  // }
+  const version = 'v0.0.4';
   showVersion(version);
 });
